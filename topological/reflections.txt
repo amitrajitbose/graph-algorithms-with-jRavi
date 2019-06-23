@@ -1,0 +1,15 @@
+Whenever there is a need to model precedence relationships which is equivalent to a dependency, is modelled using a topological sort. Simply, whenever you use the word before or after when describing a relationship, this can be equivalent to a precedence of dependent relationship and can be modelled using a directed acyclic graph or commonly DAGs.
+
+Consider the following graph
+A --> B -- > D
+A --> C --> E --> B,D
+
+You need to look at what come before what.
+In this particular graph there is only one particular ordering of vertices that can satisfy all the precedence relationship i.e.:- A->C->E->B->D
+
+A graph may have more than one topological sort.
+
+By defination, a topological sort is any ordering of all the graph's vertices that satisfies all the precedence relations. That is, all the dependencies should come for a node before the node itself.
+
+If a graph has a cycle there is no topological sort for it.
+
