@@ -2,10 +2,11 @@ from collections import defaultdict
 
 # The Graph Class
 class Graph:
-	def __init__(self, vertices, directed=True):
+	def __init__(self, vertices, directed=True, debug=False):
 		self.graph = defaultdict(set)
 		self.v = vertices
 		self.directed = directed
+		self.debug = debug
 	def add_edge(self, u, v):
 		self.graph[u].add(v)
 		if not self.directed:
@@ -16,6 +17,8 @@ class Graph:
 			if not visited[i]:
 				self.topo_util(i, visited, stack)
 		stack.insert(0,v) # push to beginning of stack
+		if self.debug:
+			print("STACK: ",stack)
 	def topo_sort(self):
 		visited = [0]*self.v
 		stack = []
@@ -24,7 +27,7 @@ class Graph:
 				self.topo_util(i,visited,stack)
 		return stack
 
-g = Graph(9, directed=True)
+g = Graph(9, directed=True, debug=True)
 g.add_edge(0, 1)
 g.add_edge(1, 2)
 g.add_edge(2, 7)
