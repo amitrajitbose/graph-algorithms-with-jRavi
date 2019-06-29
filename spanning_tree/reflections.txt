@@ -1,0 +1,16 @@
+A Minimum Spanning Tree is the Spanning Tree of a graph of least weight. A graph can
+have several MST. A Spanning Tree is any tree that includes all of the vertices of the
+graph. Thus given a graph with N vertices, a spanning tree will have N-1 edges.
+
+
+Two major algorithms for MST: 1) Prims 2) Kruskals
+
+1) Prims works only with connected graphs, returns a MST
+2) Kruskals works even with disconnected graphs, returns an MST or a forest of MSTs
+
+Prims algorithm is a GREEDY algorithm to find the minimal spanning tree for a WEIGHTED
+UNDIRECTED graph.Refer slides for algorithm.
+
+Kruskal's algorithm is also a GREEDY algorithm to find a minimal spanning tree
+for a WEIGHTED UNDIRECTED graph. The can be disconnected. Refer slides for
+algorithm.
